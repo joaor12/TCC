@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(./assets/background_image.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Menu horizontal no topo */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu button {
+    padding: 12px 25px;
+    border: none;
+    background: rgba(190, 241, 255, 0.8);
+    color: #000000;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.menu button:hover {
+    background: rgba(92, 173, 209, 0.9);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.game-container {
+    background: linear-gradient(145deg, #6cb8c9, #4a8abd);
+    padding: 20px 250px; /* Reduzido o padding top */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 950px;
+    text-align: center;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Adiciona um pouco de espaço entre elementos */
+.game-container > * {
+    margin-bottom: 140px;
+}
+        
+
+.shark-img {
+    width: 500px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.shark-img:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.answer-buttons {
+    display: none;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background: rgb(190, 241, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+
+button:hover {
+    background: #0056b3;
+    border-color: #000000;
+}
+
+#question {
+    font-weight: normal;
+    font-size: 1.5em;
+    margin: 30px 0;
+    padding: 80px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+
+#start-button {
+    padding: 15px 300px;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+#start-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: rgba(92, 173, 209, 0.9);
+    color: white;
+}

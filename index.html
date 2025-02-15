@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Expert System</title>
+
+</head>
+<link rel="stylesheet" href="./style.css">
+<link rel="shortcut icon" type="image/png" href="./assets/tubarao.png">
+<body>
+    <div class="menu">
+        <button onclick="selectOption('sistema')">Sistema</button>
+        <button onclick="selectOption('adicionar')">Adicionar uma espécie</button>
+        <button onclick="selectOption('banco')">Banco de dados</button>
+    </div>
+    <div class="content">
+        <div class="game-container">
+            <h1>Sistema Especialista para identificação de Tubarões, Raías e Quimeras</h1>
+            <h2 id="question">Inicie o questionário e responda as perguntas para identificar sua espécie.</h2>
+            <button id="start-button" onclick="startSystem()">Iniciar</button>
+        </div>
+        <img src="./assets/tubarao.png" alt="Tubarão" class="shark-img">
+    </div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
