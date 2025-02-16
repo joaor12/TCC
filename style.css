@@ -11,26 +11,31 @@ body {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
 }
 
-/* Menu horizontal no topo */
 .menu {
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 10px;
-    width: 50%;
+    width: 90%;
+    max-width: 600px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 .menu button {
-    padding: 12px 25px;
+    padding: 10px 20px;
     border: none;
     background: rgba(190, 241, 255, 0.8);
-    color: #000000;
+    color: #000;
     cursor: pointer;
     border-radius: 25px;
     font-weight: bold;
@@ -47,48 +52,53 @@ body {
 
 .content {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
     position: relative;
-    width: 100%;
 }
 
 .game-container {
     background: linear-gradient(145deg, #6cb8c9, #4a8abd);
-    padding: 20px 250px; /* Reduzido o padding top */
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 950px;
     text-align: center;
-    margin-right: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 800px;
+    width: 100%;
 }
 
-/* Adiciona um pouco de espaço entre elementos */
 .game-container > * {
-    margin-bottom: 140px;
+    margin-bottom: 20px;
 }
-        
 
+/* Imagem do tubarão fixa na direita sem se mover ao dar zoom */
 .shark-img {
-    width: 500px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 350px;
+    height: auto;
+    position: fixed;
+    right: 20px;
+    bottom: 10%;
+    transform: scale(1);
     transition: all 0.3s ease;
-    border-radius: 10px;
+    pointer-events: none;
 }
 
 .shark-img:hover {
-    transform: translateY(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .answer-buttons {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 button {
@@ -100,6 +110,7 @@ button {
     cursor: pointer;
     border-radius: 5px;
     border: 2px solid #000000;
+    transition: all 0.3s ease;
 }
 
 button:hover {
@@ -109,25 +120,52 @@ button:hover {
 
 #question {
     font-weight: normal;
-    font-size: 1.5em;
-    margin: 30px 0;
-    padding: 80px;
+    font-size: 1.3em;
+    margin: 20px 0;
+    padding: 20px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
 }
 
-
 #start-button {
-    padding: 15px 300px;
+    padding: 15px 50px;
     font-size: 1.2em;
     transition: all 0.3s ease;
 }
 
 #start-button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     background: rgba(92, 173, 209, 0.9);
     color: white;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .shark-img {
+        width: 250px;
+        right: 10px;
+        bottom: 5%;
+    }
+
+    .menu {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .game-container {
+        padding: 20px;
+    }
+
+    #question {
+        font-size: 1.1em;
+        padding: 15px;
+    }
 }
