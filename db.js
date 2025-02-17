@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri = "mongodb+srv://joaorodrigo105:eu9PEf6prTIAntDX@cluster0.sx5ei.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://joaorodrigo105:eu9PEf6prTIAntDX@cluster0.sx5ei.mongodb.net/Animal?retryWrites=true&w=majority&appName=Cluster0";
 const DATABASE_NAME = "Animais"
 
 const connectDB = async () => {

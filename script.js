@@ -13,28 +13,34 @@ const questionPrincipais = [
 const perguntasQuimera = [
     {
         pergunta: "Selecione o formato do focinho.", 
-        resposta: ["Alongado e Comprimido", "Curto, rombico ou conico"]
+        resposta: ["Alongado e Comprimido", "Curto, rombico ou conico"],
+        coluna: "Focinho"
     }, 
     {
         pergunta: "Seu animal possui proboscide?", 
-        resposta: ["Sim", "Nao", "Nulo"]    
+        resposta: ["Sim", "Nao", "Nulo"],
+        coluna: "Proboscide"
 
     }, 
     {
         pergunta: "Seu animal possui nadadeira anal?",
-        resposta: ["Sim", "Nao", "Nulo"]
+        resposta: ["Sim", "Nao", "Nulo"],
+        coluna: "Nadadeira Anal"
     },
     {
         pergunta: "Seu animal possui nadadeira caudal?",
-        resposta: ["Sim", "Nao", "Nulo"]
+        resposta: ["Sim", "Nao", "Nulo"],
+        coluna: "Nadadeira Caudal"
     },
     {
         pergunta: "Seu animal possui o clasper bifurcado?",
-        resposta: ["Sim", "Nao", "Nulo"]
+        resposta: ["Sim", "Nao", "Nulo"],
+        coluna: "Clasper bifurcado"
     },
     {
         pergunta: "Selecione o formato da margem da segunda nadadeira dorsal",
-        resposta: ["Reto", "Ondulado", "Nulo"] 
+        resposta: ["Reto", "Ondulado", "Nulo"],
+        coluna: "Margem da segunda nadadeira dorsal"
     }
 ];
 
@@ -124,6 +130,7 @@ function carregarPerguntasQuimera() {
 
         perguntasQuimera[currentQuestionQuimera].resposta.forEach(resposta => {
             const pergunta = perguntasQuimera[currentQuestionQuimera].pergunta;
+            const coluna = perguntasQuimera[currentQuestionQuimera].coluna;
 
 
             let answerButton = document.createElement("button");
@@ -131,7 +138,7 @@ function carregarPerguntasQuimera() {
             answerButton.innerText = resposta;
             answerButton.addEventListener("click", () => {
                 respostaQuimera.push({
-                    pergunta:pergunta,
+                    coluna:coluna,
                     resposta:resposta
                 });
 
@@ -147,26 +154,22 @@ function carregarPerguntasQuimera() {
 
         
     } else { 
-
-        fetch("http://localhost:3000/quimera", {
+        const respostaQuimeraString = encodeURIComponent(JSON.stringify(respostaQuimera))
+        fetch(`http://localhost:3000/quimera?respostaQuimera=${respostaQuimeraString}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            data: respostaQuimera
         })
         .then(response => response.text())
-        .then(data => console.log(data))
+        .then(data =>{
+            console.log(data),
+            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}`
+        })
         .catch(error => console.error("Erro:", error));
 
-
-
-
-
-
     }
-
-       
- 
     
 }
 
