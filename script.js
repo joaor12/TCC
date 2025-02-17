@@ -18,29 +18,29 @@ const perguntasQuimera = [
     }, 
     {
         pergunta: "Seu animal possui proboscide?", 
-        resposta: ["Sim", "Nao", "Nulo"],
+        resposta: ["Sim", "Não", "Nulo"],
         coluna: "Proboscide"
 
     }, 
     {
         pergunta: "Seu animal possui nadadeira anal?",
-        resposta: ["Sim", "Nao", "Nulo"],
-        coluna: "Nadadeira Anal"
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Nadadeira_anal"
     },
     {
         pergunta: "Seu animal possui nadadeira caudal?",
-        resposta: ["Sim", "Nao", "Nulo"],
-        coluna: "Nadadeira Caudal"
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Nadadeira_caudal"
     },
     {
         pergunta: "Seu animal possui o clasper bifurcado?",
-        resposta: ["Sim", "Nao", "Nulo"],
-        coluna: "Clasper bifurcado"
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Clasper_bifurcado"
     },
     {
         pergunta: "Selecione o formato da margem da segunda nadadeira dorsal",
-        resposta: ["Reto", "Ondulado", "Nulo"],
-        coluna: "Margem da segunda nadadeira dorsal"
+        resposta: ["Reta", "Ondulada", "Nulo"],
+        coluna: "Margem_seg_nad_dorsal"
     }
 ];
 
