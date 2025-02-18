@@ -48,25 +48,129 @@ const respostaQuimera = [];
 
 const perguntasTubarao = [
     {
-        pergunta: "Selecione o formato do focinho.", 
-        resposta: ["Arredondado", "Estreito e Pontiagudo", "Largo e comprimido"]
-    }, 
+        pergunta: "Seu animal possui nadadeira anal ausente?", 
+        resposta: ["Não", "Sim"], //se  não então hexanchiformes
+        coluna: "Nadadeira_anal_ausente"
+    },
+    {
+        pergunta: "Qual é o formato do corpo do seu animal", 
+        resposta: ["Fusiforme", "Achatado dorsoventralmente"],//se fusiforme entao squaliformes se achatado dorsoventralmente então sqatiniforme
+        coluna: "Formato_corpo"
+    },
+    {
+        pergunta: "Quantas nadadeiras dorsais seu animal possui?", 
+        resposta: ["1", "2"],
+        coluna: "Qtd_nadadeira_dorsal"
+    },
+    {
+        pergunta: "Seu animal possui Membranas nictitantes nos olhos?", 
+        resposta: ["Não", "Sim"],
+        coluna: "Membranas_nictitantes_olhos"
+    },
+    {
+        pergunta: "Selecione o formato do focinho do seu animal", 
+        resposta: ["Arredondado", "Estreita e Pontiaguda", "Cabeça larga e comprimida", "Curto e arredondado", "Longo e Arredondao", "Nulo"],
+        coluna: "Focinho"
+    },
+    {
+        pergunta: "Seu animal possui espinhos dorsais?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Espinhos_dorsais"
+    },
+    {
+        pergunta: "Seu animal possui orgãos produtores de luz? ", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Orgaos_produtores_luz"
+    },
+    {
+        pergunta: "Seu animal possui olhos grandes e arredondados?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Olho_grandes_arredondados"
+    },
+    {
+        pergunta: "Seu animal possui um corpo robusto?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Corpo_robusto"
+    },
+    {
+        pergunta: "Seu animal possui uma fileira de tuberculos dorsais medianos?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Fileira_tuberculos_dorsais_medianos"
+    },
+    {
+        pergunta: "Seu animal possui um par de denticulos dermicos desenvolvidos?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Par_denticulos_dermicos_desenvolvidos"
+    },
+    {
+        pergunta: "Seu animal possui uma boca redonda e dentição adaptada?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Boca_redonda_denticao_adaptada"
+    },
+    {
+        pergunta: "Seu animal possui espinho em ambas nadadeiras dorsais?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Espinho_ambas_nadadeiras_dorsais"
+    },
+    {
+        pergunta: "Seu animal possui a ponta da nadadeira caudal branca?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Ponta_nadadeira_caudal_branca"
+    },
+    {
+        pergunta: "Seu animal possui focinho curto e arredondado?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Focinho_curto_arredondado"
+    },
+    {
+        pergunta: "Seu animal possui a segunda nadadeira dorsal menor que a primeira?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Segunda_nadadeira_dorsal_menor_primeira"
+    },
+    {
+        pergunta: "Seu animal possui focinho curto e largo?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Focinho_curto_largo"
+    },
+    {
+        pergunta: "Seu animal possui uma linha de fotóforos inferior padrnizada?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Linha_fotóforos_inferior_padronizada"
+    }
 ];
 
 const respostaTubarao = [];
 
 const perguntasRaia = [
     {
-        pergunta: "Selecione o formato do corpo.", 
-        resposta: ["Alongado", "Achatado"]
+        pergunta: "Seu animal possui orgãos eletricos na cabeça?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Orgaos_eletricos_cabeca"
     },
     {
-        pergunta: "Selecione o lobo inferior na nadadeira dorsal?",
-        resposta: ["Com lobo inferior definido", "Sem lobo inferior definido"]
+        pergunta: "Seu animal possui rosto alongado e dentado?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Rosto_alongado_dentado"
     },
     {
-        pergunta: "Selecione o Comprimento da órbita",
-        resposta: ["Cabe entre 1,1 a 1,5 vezes na distancia internasal", "Cabe entre 1,4 a 2,6 vezes na distancia internasal"] 
+        pergunta: "A origem da primeira nadadeira dorsal está alinhada com a origem da nadadeira pelvica?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Origem_prim_nad_dorsal_alinhada_origem_nad_pelvica"
+    },
+    {
+        pergunta: "O dorso do seu animal possui manchas simetricas?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Dorso_manchas_simetricas"
+    },
+    {
+        pergunta: "Seu animal possui orgaos eletricos?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Possui_orgaos_eletricos"
+    },
+    {
+        pergunta: "A coloração dorsal do seu animal é castanha escura?", 
+        resposta: ["Sim", "Não", "Nulo"],
+        coluna: "Coloracao_dorsal_castanha_escura"
     } 
 ];
 
@@ -209,14 +313,19 @@ function carregarPerguntasTubarao() {
 
     } else { 
 
-        fetch("http://localhost:3000/quimera", {
+        const respostaTubaraoString = encodeURIComponent(JSON.stringify(respostaTubarao))
+        fetch(`http://localhost:3000/tubarao?respostaTubarao=${respostaTubaraoString}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            data: respostaTubarao
         })
         .then(response => response.text())
-        .then(data => console.log(data))
+        .then(data =>{
+            console.log(data),
+            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}`
+        })
         .catch(error => console.error("Erro:", error));
 
     }
@@ -262,17 +371,23 @@ function carregarPerguntasRaia() {
 
     } else { 
 
-        fetch("http://localhost:3000/quimera", {
+        const respostaRaiaString = encodeURIComponent(JSON.stringify(respostaRaia))
+        fetch(`http://localhost:3000/raia?respostaRaia=${respostaRaiaString}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            data: respostaRaia
         })
         .then(response => response.text())
-        .then(data => console.log(data))
+        .then(data =>{
+            console.log(data),
+            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}`
+        })
         .catch(error => console.error("Erro:", error));
 
     }
 
  
 }
+

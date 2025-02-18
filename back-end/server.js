@@ -21,10 +21,25 @@ app.get('/quimera', async (req, res) => {
     }
 });
 
+app.get('/tubarao', async (req, res) => {  
+    try {
+        const response = await controller.tubarao(req, res);
+        res.send(response);
+    } catch (error) {
+        console.error("Erro no servidor:", error);
+        res.status(500).json({ error: "Erro interno do servidor" });
+    }
+});
 
-
-
-
+app.get('/raia', async (req, res) => {  
+    try {
+        const response = await controller.raia(req, res);
+        res.send(response);
+    } catch (error) {
+        console.error("Erro no servidor:", error);
+        res.status(500).json({ error: "Erro interno do servidor" });
+    }
+});
 
 
 
