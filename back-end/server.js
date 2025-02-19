@@ -41,20 +41,19 @@ app.get('/raia', async (req, res) => {
     }
 });
 
+app.get('/listaAnimais', async (req, res) => {  
+    try {
+        const response = await controller.listaAnimais(req, res);
+        res.send(response);
+    } catch (error) {
+        console.error("Erro no servidor:", error);
+        res.status(500).json({ error: "Erro interno do servidor" });
+    }
+});
+
 
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
 //
-
-
-
-
-
-
-
-
-/* if (results.length = 0) {
-    montar query com menos filtros
-} */

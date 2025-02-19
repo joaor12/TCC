@@ -248,7 +248,6 @@ function carregarPerguntasQuimera() {
 
                 currentQuestionQuimera++;
                 carregarPerguntasQuimera();
-                console.log("respostaQuimera ==> ", respostaQuimera);
             })
 
             document.getElementById("answer-buttons").appendChild(answerButton);
@@ -269,7 +268,7 @@ function carregarPerguntasQuimera() {
         .then(response => response.text())
         .then(data =>{
             window.location.href = `/front-end/paginaEspecie/paginaEspecie.html?resultado=${encodeURIComponent(data)}`;
-            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}`
+            document.getElementById("question").innerText = `Carregando...`
         })
         .catch(error => console.error("Erro:", error));
 
@@ -291,19 +290,19 @@ function carregarPerguntasTubarao() {
 
         perguntasTubarao[currentQuestionTubarao].resposta.forEach(resposta => {
             const pergunta = perguntasTubarao[currentQuestionTubarao].pergunta;
+            const coluna = perguntasTubarao[currentQuestionTubarao].coluna;
 
             let answerButton = document.createElement("button");
             answerButton.classList.add("answer-button");
             answerButton.innerText = resposta;
             answerButton.addEventListener("click", () => {
                 respostaTubarao.push({
-                    pergunta:pergunta,
+                    coluna:coluna,
                     resposta:resposta
                 });
 
                 currentQuestionTubarao++;
                 carregarPerguntasTubarao();
-                console.log("respostaTubarao ==> ", respostaTubarao);
             })
 
             document.getElementById("answer-buttons").appendChild(answerButton);
@@ -325,22 +324,17 @@ function carregarPerguntasTubarao() {
         .then(data =>{
             
             window.location.href = `/front-end/paginaEspecie/paginaEspecie.html?resultado=${encodeURIComponent(data)}`;
+            document.getElementById("question").innerText = `Carregando...`
 
-            /* console.log(data),
-            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}` */
         })
         .catch(error => console.error("Erro:", error));
 
     }
-
-       
-
     
 }
 
 let currentQuestionRaia = 0;
 function carregarPerguntasRaia() {
-
 
     const div_buttons = document.getElementById("answer-buttons");
     div_buttons.style.display = "block";
@@ -352,19 +346,19 @@ function carregarPerguntasRaia() {
 
         perguntasRaia[currentQuestionRaia].resposta.forEach(resposta => {
             const pergunta = perguntasRaia[currentQuestionRaia].pergunta;
+            const coluna = perguntasRaia[currentQuestionRaia].coluna;
 
             let answerButton = document.createElement("button");
             answerButton.classList.add("answer-button");
             answerButton.innerText = resposta;
             answerButton.addEventListener("click", () => {
                 respostaRaia.push({
-                    pergunta:pergunta,
+                    coluna:coluna,
                     resposta:resposta
                 });
 
                 currentQuestionRaia++;
                 carregarPerguntasRaia();
-                console.log("respostaRaia ==> ", respostaRaia);
             })
 
             document.getElementById("answer-buttons").appendChild(answerButton);
@@ -386,13 +380,11 @@ function carregarPerguntasRaia() {
         .then(data =>{
             
             window.location.href = `/front-end/paginaEspecie/paginaEspecie.html?resultado=${encodeURIComponent(data)}`;
-            /* console.log(data),
-            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}` */
+            document.getElementById("question").innerText = `Carregando...`
         })
         .catch(error => console.error("Erro:", error));
 
     }
-
  
 }
 

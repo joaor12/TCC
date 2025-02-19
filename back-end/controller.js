@@ -73,3 +73,16 @@ exports.raia = async (req, res) => {
     }
 };
 
+exports.listaAnimais = async (req, res) => {
+    try {
+    
+
+        const animais = await service.listaAnimais();
+
+        return(animais);
+       
+    
+    } catch (error) {
+    console.log("error ==> ", error);
+    }
+};

@@ -13,7 +13,8 @@ const QuimeraSchema = new mongoose.Schema({
     Nadadeira_anal:String,
     Nadadeira_caudal:String,
     Clasper_bifurcado:String,
-    Margem_seg_nad_dorsal:String
+    Margem_seg_nad_dorsal:String,
+    ID_fishbase:String
 
 }, { collection: "tbl_quimera" });
 
@@ -44,8 +45,9 @@ const TubaraoSchema = new mongoose.Schema({
     Ponta_nadadeira_caudal_branca:String,
     Focinho_curto_arredondado:String,
     Segunda_nadadeira_dorsal_menor_primeira:String,
-    Focinho_curto_largo:String
-
+    Focinho_curto_largo:String,
+    ID_fishbase:String
+    
 
 }, { collection: "tbl_tubarao" });
 
@@ -66,20 +68,10 @@ const RaiaSchema = new mongoose.Schema({
     Dorso_manchas_simetricas:String,
     Possui_orgaos_eletricos:String,
     Coloracao_dorsal_castanha_escura:String,
-
+    ID_fishbase:String
 
 }, { collection: "tbl_raia" });
 
 const RaiaModel = mongoose.model("tbl_raia", RaiaSchema);
 
-
-
-
-
-
-
-
-
-
-
-module.exports = { QuimeraModel};
+module.exports = { QuimeraModel, TubaraoModel, RaiaModel};

@@ -100,26 +100,71 @@ body {
 /* Tabela formatada */
 table {
     width: 100%;
-    max-width: 600px;
+    max-width: 1200px;
     border-collapse: collapse;
     text-align: left;
 }
+table thead{
+    background-color: #bdbdfd;
+}
+table tbody{ 
+    overflow: visible;
 
-.titulo {
+}
+
+.coluna_animal{ 
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+      border: 1px solid black;
+}
+.coluna_ordem{ 
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+      border: 1px solid black;
+}
+.coluna_familia{ 
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+      border: 1px solid black;
+}
+.coluna_genero{ 
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+      border: 1px solid black;
+}
+.coluna_especie{ 
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+/* .titulo {
     font-weight: bold;
     font-size: 1.2em;
     padding: 10px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     margin-bottom: 10px;
-}
+} */
 
 /* Logo clicável centralizada na parte inferior */
 .logo-container {
-    position: fixed;
     bottom: 100px;
     left: 50%;
-    transform: translateX(-50%);
 }
 
 .logo-container img {
@@ -163,4 +208,7 @@ table {
     .logo-container img {
         width: 100px;
     }
+}
+.game-container > * {
+    margin-bottom: 20px;
 }

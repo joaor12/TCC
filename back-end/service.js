@@ -5,21 +5,29 @@ exports.quimera = (query) => {
   return new Promise(async (resolve, reject) => {
     try {
       let quimera = {}
+      let arrayQuimera = []; 
+      let mensagem
       quimera = await QuimeraModel.findOne(query);
-
+      quimera && arrayQuimera.push(quimera);
+      mensagem = "Sua espécie é"
       if (!quimera) {
+          mensagem = "Sua espécie provavelmente é"
         do {
           quimera = await QuimeraModel.find(query);
-
+          
           if (quimera.length > 0 ) {
+            arrayQuimera.push(...quimera)
             break;
           };
           query = await atualizaQuery(query);
         } while (quimera.length === 0 );
       }
-      
 
-      resolve(quimera);
+
+      resolve({
+        animais: arrayQuimera, 
+        mensagem: mensagem  
+      });
     } catch (error) {
       console.log("error ==> ", error);
       reject(error);
@@ -32,23 +40,29 @@ exports.quimera = (query) => {
 exports.tubarao = (query) => {
   return new Promise(async (resolve, reject) => {
     try {
-      let tubarao = {}
+      let tubarao = {};
+      let arrayTubarao = [];
       tubarao = await TubaraoModel.findOne(query);
-
+      tubarao && arrayTubarao.push(tubarao);
+      mensagem = "Sua espécie é"
       if (!tubarao) {
+          mensagem = "Sua espécie provavelmente é"
         do {
-          console.log("query ==> ", query);
           tubarao = await TubaraoModel.find(query);
-
+          
           if (tubarao.length > 0 ) {
+            arrayTubarao.push(...tubarao)
             break;
           };
           query = await atualizaQuery(query);
         } while (tubarao.length === 0 );
       }
-      
 
-      resolve(tubarao);
+
+      resolve({
+        animais: arrayTubarao, 
+        mensagem: mensagem  
+      });
     } catch (error) {
       console.log("error ==> ", error);
       reject(error);
@@ -61,23 +75,56 @@ exports.tubarao = (query) => {
 exports.raia = (query) => {
   return new Promise(async (resolve, reject) => {
     try {
-      let raia = {}
+      let raia = {};
+      let arrayRaia = [];
       raia = await RaiaModel.findOne(query);
-
+      raia && arrayRaia.push(raia);
+      mensagem = "Sua espécie é"
       if (!raia) {
+          mensagem = "Sua espécie provavelmente é"
         do {
-          console.log("query ==> ", query);
           raia = await RaiaModel.find(query);
-
+          
           if (raia.length > 0 ) {
+            arrayRaia.push(...raia)
             break;
           };
           query = await atualizaQuery(query);
         } while (raia.length === 0 );
       }
-      
 
-      resolve(raia);
+
+      resolve({
+        animais: arrayRaia, 
+        mensagem: mensagem  
+      });
+    } catch (error) {
+      console.log("error ==> ", error);
+      reject(error);
+
+    }
+  });
+};
+
+
+exports.listaAnimais = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+    let animais = []
+     const raias = await RaiaModel.find();
+     const quimera = await QuimeraModel.find();
+     const tubarao = await TubaraoModel.find();
+
+     animais.push({
+
+      raias: raias,
+      quimera: quimera,
+      tubarao: tubarao
+
+     }) 
+     console.log("animais ==> ", animais);
+
+      resolve(animais);
     } catch (error) {
       console.log("error ==> ", error);
       reject(error);
