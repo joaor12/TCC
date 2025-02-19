@@ -268,7 +268,7 @@ function carregarPerguntasQuimera() {
         })
         .then(response => response.text())
         .then(data =>{
-            console.log(data),
+            window.location.href = `/front-end/paginaEspecie/paginaEspecie.html?resultado=${encodeURIComponent(data)}`;
             document.getElementById("question").innerText = `A espécie indentificada foi: ${data}`
         })
         .catch(error => console.error("Erro:", error));
@@ -323,8 +323,11 @@ function carregarPerguntasTubarao() {
         })
         .then(response => response.text())
         .then(data =>{
-            console.log(data),
-            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}`
+            
+            window.location.href = `/front-end/paginaEspecie/paginaEspecie.html?resultado=${encodeURIComponent(data)}`;
+
+            /* console.log(data),
+            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}` */
         })
         .catch(error => console.error("Erro:", error));
 
@@ -381,8 +384,10 @@ function carregarPerguntasRaia() {
         })
         .then(response => response.text())
         .then(data =>{
-            console.log(data),
-            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}`
+            
+            window.location.href = `/front-end/paginaEspecie/paginaEspecie.html?resultado=${encodeURIComponent(data)}`;
+            /* console.log(data),
+            document.getElementById("question").innerText = `A espécie indentificada foi: ${data}` */
         })
         .catch(error => console.error("Erro:", error));
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Expert System</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" type="image/png" href="../../assets/tubarao.png">
+</head>
+<body>
+
+    <!-- Menu de navegação -->
+    <div class="menu">
+        <button onclick="selectOption('sistema')">Sistema</button>
+        <button onclick="selectOption('adicionar')">Adicionar uma espécie</button>
+        <button onclick="selectOption('banco')">Banco de dados</button>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <div class="game-container">
+            <p id="resultado"></p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <td class="titulo">Animal</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo">Ordem</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo">Família</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo">Gênero</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo">Espécie</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    <!-- Logo clicável centralizada na parte inferior -->
+    <div class="logo-container">
+        <a href="https://www.fishbase.se/search.php" target="_blank">
+            <img src="../../assets/logo_fishbase.png" alt="Logo do Sistema">
+        </a>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -17,8 +17,7 @@ exports.quimera = async (req, res) => {
             return res.status(404).json({ error: "Animal não encontrado" });
         } 
 
-        const especie = animal.Especie;
-        return(especie);
+        return(animal);
        
     
     } catch (error) {
@@ -42,8 +41,7 @@ exports.tubarao = async (req, res) => {
             return res.status(404).json({ error: "Animal não encontrado" });
         } 
 
-        const especie = animal.Especie;
-        return(especie);
+        return(animal);
        
     
     } catch (error) {
@@ -67,8 +65,7 @@ exports.raia = async (req, res) => {
             return res.status(404).json({ error: "Animal não encontrado" });
         } 
 
-        const especie = animal.Especie;
-        return(especie);
+        return(animal);
        
     
     } catch (error) {
