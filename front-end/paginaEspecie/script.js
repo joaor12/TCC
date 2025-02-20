@@ -65,7 +65,7 @@ if (animais.length > 0) {
 }
 
 if(contadorAnimais > 1){ 
-    document.getElementById("resultado").innerText = `Foram indentificadas mais de uma espécie`;
+    document.getElementById("resultado").innerText = `Aqui estão algumas sugestões`;
     
     document.getElementById("fishbase").href = `https://www.fishbase.se/search.php`;
 } else { 

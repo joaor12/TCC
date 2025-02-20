@@ -32,7 +32,7 @@ body {
 }
 
 .menu button {
-    padding: 10px 20px;
+    padding: 10px 60px;
     border: none;
     background: rgba(190, 241, 255, 0.8);
     color: #000;
@@ -79,21 +79,6 @@ body {
 }
 
 /* Imagem do tubarão fixa na direita sem se mover ao dar zoom */
-.shark-img {
-    width: 350px;
-    height: auto;
-    position: fixed;
-    right: 20px;
-    bottom: 10%;
-    transform: scale(1);
-    transition: all 0.3s ease;
-    pointer-events: none;
-}
-
-.shark-img:hover {
-    transform: scale(1.05);
-}
-
 .answer-buttons {
     display: flex;
     flex-wrap: wrap;

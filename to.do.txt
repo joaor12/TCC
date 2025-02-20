@@ -1,0 +1,5 @@
+1. Revisar o css (menus instaveis)
+
+2. Criar página de banco de dados
+
+3. Separar tubarões por funções

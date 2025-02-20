@@ -34,7 +34,7 @@ body {
 }
 
 .menu button {
-    padding: 10px 20px;
+    padding: 10px 60px;
     border: none;
     background: rgba(190, 241, 255, 0.8);
     color: #000;
@@ -105,7 +105,7 @@ table {
     text-align: left;
 }
 table thead{
-    background-color: #bdbdfd;
+    background-color: #4a7c88;
 }
 table tbody{ 
     overflow: visible;
@@ -152,16 +152,7 @@ table tbody{
     margin-bottom: 10px;
     border: 1px solid black;
 }
-/* .titulo {
-    font-weight: bold;
-    font-size: 1.2em;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    margin-bottom: 10px;
-} */
 
-/* Logo clicável centralizada na parte inferior */
 .logo-container {
     bottom: 100px;
     left: 50%;
@@ -176,6 +167,29 @@ table tbody{
 
 .logo-container img:hover {
     transform: scale(1.1);
+}
+
+.home-button {
+    position: fixed;
+    top: 45px;
+    left: 50px;
+    background: rgb(190, 241, 255);
+    padding: 15px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.home-button:hover {
+    background: rgba(92, 173, 209, 0.9);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsividade */

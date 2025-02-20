@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const homeButton = document.querySelector(".home-button");
+
+    if (homeButton) {
+        homeButton.addEventListener("click", function () {
+            location.reload();
+        });
+    }
+});
+
 const questionPrincipais = [
     {
         pergunta: "Qual é a quantidade de fendas brânquias?",
