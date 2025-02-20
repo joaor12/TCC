@@ -20,6 +20,19 @@ const QuimeraSchema = new mongoose.Schema({
 
 const QuimeraModel = mongoose.model("tbl_quimera", QuimeraSchema);
 
+const allAnimalsSchema = new mongoose.Schema({
+    
+    Animal:String,
+    Ordem:String,
+    Família:String,
+    Genero:String,
+    Especie:String,
+    ID_fishbase:String
+
+}, { collection: "tbl_animais" });
+
+const allAnimalsModel = mongoose.model("tbl_animais", allAnimalsSchema);
+
 const TubaraoSchema = new mongoose.Schema({
     
     Animal:String,
@@ -74,4 +87,4 @@ const RaiaSchema = new mongoose.Schema({
 
 const RaiaModel = mongoose.model("tbl_raia", RaiaSchema);
 
-module.exports = { QuimeraModel, TubaraoModel, RaiaModel};
+module.exports = { QuimeraModel, TubaraoModel, RaiaModel, allAnimalsModel};

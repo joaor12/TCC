@@ -143,7 +143,7 @@ const perguntasTubarao = [
         coluna: "Focinho_curto_largo"
     },
     {
-        pergunta: "Seu animal possui uma linha de fotóforos inferior padrnizada?", 
+        pergunta: "Seu animal possui uma linha de fotóforos inferior padronizada?", 
         resposta: ["Sim", "Não", "Nulo"],
         coluna: "Linha_fotóforos_inferior_padronizada"
     }
@@ -184,10 +184,29 @@ const perguntasRaia = [
     } 
 ];
 
+
+
+//se o Usuario responder Sim na pergunta ("Seu animal possui orgãos eletricos na cabeça?") Vai direto pra pergunta (A coloração dorsal do seu animal é castanha escura?);
+
+//se o Usuario responder Sim na pergunta ("A origem da primeira nadadeira dorsal está alinhada com a origem da nadadeira pelvica?") ja acha a resposta
+//
+
+
 const respostaRaia = [];
 
 
 let currentQuestion = 0;
+
+function selectOption (pagina){ 
+    if(pagina == 'sistema'){ 
+        
+        window.location.href = `../../../index.html`;
+    } else if(pagina == 'banco'){ 
+
+        window.location.href = `../../../index.html`;
+
+    }
+}
 
 function startSystem() {
     document.getElementById("start-button").style.display = "none";
@@ -306,6 +325,11 @@ function carregarPerguntasTubarao() {
             answerButton.classList.add("answer-button");
             answerButton.innerText = resposta;
             answerButton.addEventListener("click", () => {
+
+                if(pergunta == "Qual é o formato do corpo do seu animal" && resposta == "Achatado dorsoventralmente"){
+                    currentQuestionTubarao = 8;
+                }
+
                 respostaTubarao.push({
                     coluna:coluna,
                     resposta:resposta
@@ -362,6 +386,15 @@ function carregarPerguntasRaia() {
             answerButton.classList.add("answer-button");
             answerButton.innerText = resposta;
             answerButton.addEventListener("click", () => {
+
+                if(pergunta == "Seu animal possui orgãos eletricos na cabeça?" && resposta == "Sim") { 
+                    //se o Usuario responder Sim na pergunta ("Seu animal possui orgãos eletricos na cabeça?") Atualiza o contador, para ir direto para a ultima pergunta
+                    const ultimaPergunta = (perguntasRaia.length - 2)
+                    currentQuestionRaia = ultimaPergunta
+                    
+                }
+
+
                 respostaRaia.push({
                     coluna:coluna,
                     resposta:resposta

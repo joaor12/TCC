@@ -1,19 +1,32 @@
-const params = new URLSearchParams(window.location.search);
-const resultado = JSON.parse(params.get("resultado"));
-const{animais, mensagem} = resultado;
+function carregaAnimais(){
 
-document.getElementById("resultado").innerText = mensagem;
-let contadorAnimais = 0;
+    fetch(`http://localhost:3000/listaAnimais`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+    .then(response => response.text())
+    .then(data =>{
+        
+    const animais = JSON.parse(data);
+        renderTabelaAnimais(animais)
+        
+    })
+    .catch(error => console.error("Erro:", error));
 
-if (animais.length > 0) {
+}
+
+carregaAnimais();
+
+
+function renderTabelaAnimais(animais) {
     animais.forEach(animal => {
-        const {_id,Animal,Ordem,Família,Genero,Especie } = animal;
-        contadorAnimais++
+        const {_id,Animal,Ordem,Família,Genero,Especie, ID_fishbase } = animal;
         let tr = document.createElement('tr');
-        tr.id = _id
+        tr.id = _id;
         const tbody = document.querySelector('.game-container table tbody');
         tbody.appendChild(tr);
-
 
         //Coluna Animal
         td = document.createElement('td'); 
@@ -60,14 +73,28 @@ if (animais.length > 0) {
         td.appendChild(p); 
         p.innerHTML = Especie;
 
+        td = document.createElement('td'); 
+        tr.appendChild(td); 
+        td.className = "coluna_fishbase"; 
+
+        const a = document.createElement('a'); 
+        td.appendChild(a); 
+
+        let button = document.createElement('button');
+        a.appendChild(button); 
+        button.className = "button-peixe"
+        button.addEventListener('click', () =>{ 
+            a.href = `https://www.fishbase.se/summary/${ID_fishbase}`;
+            a.target = '_blank'
+        }) 
+
+        let i = document.createElement('i')
+        button.appendChild(i); 
+
+        i.className = "fa-solid fa-fish"
+
+
+
     });
-}
-
-if(contadorAnimais > 1){ 
-    document.getElementById("resultado").innerText = `Aqui estão algumas sugestões`;
     
-    document.getElementById("fishbase").href = `https://www.fishbase.se/search.php`;
-} else { 
-
-    document.getElementById("fishbase").href = `https://www.fishbase.se/summary/${animais[0].ID_fishbase}`;
 }

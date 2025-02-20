@@ -1,4 +1,4 @@
-const {  QuimeraModel, TubaraoModel, RaiaModel } =  require('./schema');
+const {  QuimeraModel, TubaraoModel, RaiaModel, allAnimalsModel } =  require('./schema');
 const { atualizaQuery } = require('./utils');
 
 exports.quimera = (query) => {
@@ -110,19 +110,8 @@ exports.raia = (query) => {
 exports.listaAnimais = () => {
   return new Promise(async (resolve, reject) => {
     try {
-    let animais = []
-     const raias = await RaiaModel.find();
-     const quimera = await QuimeraModel.find();
-     const tubarao = await TubaraoModel.find();
+      const animais = await allAnimalsModel.find().sort({ Animal: 1 });
 
-     animais.push({
-
-      raias: raias,
-      quimera: quimera,
-      tubarao: tubarao
-
-     }) 
-     console.log("animais ==> ", animais);
 
       resolve(animais);
     } catch (error) {
