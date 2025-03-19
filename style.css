@@ -98,11 +98,16 @@ button {
     transition: all 0.3s ease;
 }
 
+
 button:hover {
     background: #0056b3;
     border-color: #000000;
 }
 
+.voltar-button{ 
+    position: relative;
+    left: -370px;
+}
 #question {
     font-weight: normal;
     font-size: 1.3em;

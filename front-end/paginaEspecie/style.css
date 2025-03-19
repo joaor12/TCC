@@ -152,6 +152,32 @@ table tbody{
     margin-bottom: 10px;
     border: 1px solid black;
 }
+.coluna_fishbase{ 
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.button-peixe{
+    background: rgb(190, 241, 255);
+    padding: 15px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    width: 31px;
+    height: 30px;
+    display: flex;
+}
+
 
 .logo-container {
     bottom: 100px;

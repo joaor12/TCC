@@ -219,8 +219,12 @@ table tbody{
     font-weight: bold;
     border: 2px solid rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    width: 31px;
+    height: 30px;
+    display: flex;
 }
-
 
 .game-container::-webkit-scrollbar {
     width: 8px; /* Largura da barra de rolagem vertical */

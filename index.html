@@ -6,22 +6,24 @@
     <title>Sea Expert System</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" type="image/png" href="./assets/tubarao.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <button class="home-button">&#8962; Home</button>
 
     <div class="menu">
         <a href="/index.html">
-            <button class="sistema" >Sistema</button>
+            <button class="sistema" >Identificar uma espécie</button>
         </a> 
 
         <a href="/front-end/paginaBanco/paginaBanco.html">
-            <button class="banco" >Banco de Dados</button>
+            <button class="banco" >Base completa</button>
         </a> 
     </div>
     
     <div class="content">
         <div class="game-container">
+            <button class="voltar-button" onclick="voltar()" style="display: none;"><i class="fa-solid fa-arrow-left"></i></button>
             <h1>Sistema Especialista para identificação de Tubarões, Raías e Quimeras</h1>
             <h2 id="question">Inicie o questionário e responda as perguntas para identificar sua espécie</h2>
             <div id="answer-buttons" class="answer-buttons"></div>

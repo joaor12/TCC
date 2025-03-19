@@ -7,7 +7,7 @@ let contadorAnimais = 0;
 
 if (animais.length > 0) {
     animais.forEach(animal => {
-        const {_id,Animal,Ordem,Família,Genero,Especie } = animal;
+        const {_id,Animal,Ordem,Família,Genero,Especie, ID_fishbase } = animal;
         contadorAnimais++
         let tr = document.createElement('tr');
         tr.id = _id
@@ -60,6 +60,29 @@ if (animais.length > 0) {
         td.appendChild(p); 
         p.innerHTML = Especie;
 
+        //Coluna Fishbase
+        td = document.createElement('td'); 
+        tr.appendChild(td); 
+        td.className = "coluna_fishbase"; 
+
+        const a = document.createElement('a'); 
+        td.appendChild(a); 
+
+       
+
+        let button = document.createElement('button');
+        a.appendChild(button); 
+        button.className = "button-peixe"
+        button.addEventListener('click', () =>{ 
+            a.href = `https://www.fishbase.se/summary/${ID_fishbase}`;
+            a.target = '_blank'
+        }) 
+
+        let i = document.createElement('i')
+        button.appendChild(i);
+        i.className = "fa-solid fa-fish-fins";	
+
+
     });
 }
 
@@ -69,5 +92,5 @@ if(contadorAnimais > 1){
     document.getElementById("fishbase").href = `https://www.fishbase.se/search.php`;
 } else { 
 
-    document.getElementById("fishbase").href = `https://www.fishbase.se/summary/${animais[0].ID_fishbase}`;
+   // document.getElementById("fishbase").href = `https://www.fishbase.se/summary/${animais[0].ID_fishbase}`;
 }

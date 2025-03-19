@@ -90,8 +90,7 @@ function renderTabelaAnimais(animais) {
 
         let i = document.createElement('i')
         button.appendChild(i); 
-
-        i.className = "fa-solid fa-fish"
+        i.className = "fa-solid fa-fish-fins";	
 
 
 
