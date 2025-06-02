@@ -28,7 +28,7 @@ const perguntasQuimera = [
     },
     {
         pergunta: "Seu animal possui proboscide?",
-        resposta: ["Sim", "Não", "Nulo"],
+        resposta: ["Sim", "Não", "Sem informação"],
         coluna: "Proboscide"
 
     },
