@@ -89,13 +89,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
+    overflow-y: auto;
+    max-height: 580px;
+    border: 1px solid #FFF;
+    scrollbar-width: initial; /* Deixa a barra mais fina */
+    scrollbar-color: #6cb8c9 #4a7c88; /* (thumb, track) */
 }
+
 
 .game-container > * {
     margin-bottom: 20px;
 }
+
+/* .game-container {
+    scrollbar-width: initial; /* Deixa a barra mais fina * /
+    scrollbar-color: #6cb8c9 #4a7c88; /* (thumb, track) * /
+} */
+
 
 /* Tabela formatada */
 table {

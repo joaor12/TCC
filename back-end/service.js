@@ -41,6 +41,7 @@ exports.tubarao = (query) => {
   return new Promise(async (resolve, reject) => {
     try {
       let tubarao = {};
+      let filtroTubarao = []
       let arrayTubarao = [];
       tubarao = await TubaraoModel.findOne(query);
       tubarao && arrayTubarao.push(tubarao);
@@ -51,7 +52,21 @@ exports.tubarao = (query) => {
           tubarao = await TubaraoModel.find(query);
           
           if (tubarao.length > 0 ) {
-            arrayTubarao.push(...tubarao)
+            for (let index = 0; index < tubarao.length; index++) {
+              const animais = tubarao[index];
+              const {Animal, Ordem, Família, Genero, Especie, ID_fishbase} = animais;
+
+              filtroTubarao.push({
+                Animal,
+                Ordem,
+                Família,
+                Genero,
+                Especie,
+                ID_fishbase
+              });
+            }
+
+            arrayTubarao.push(...filtroTubarao)
             break;
           };
           query = await atualizaQuery(query);
@@ -76,6 +91,7 @@ exports.raia = (query) => {
   return new Promise(async (resolve, reject) => {
     try {
       let raia = {};
+      let filtroRaia = []
       let arrayRaia = [];
       raia = await RaiaModel.findOne(query);
       raia && arrayRaia.push(raia);
@@ -86,13 +102,26 @@ exports.raia = (query) => {
           raia = await RaiaModel.find(query);
           
           if (raia.length > 0 ) {
-            arrayRaia.push(...raia)
+            for (let index = 0; index < raia.length; index++) {
+              const animais = raia[index];
+              const {Animal, Ordem, Família, Genero, Especie, ID_fishbase} = animais;
+
+              filtroRaia.push({
+                Animal,
+                Ordem,
+                Família,
+                Genero,
+                Especie,
+                ID_fishbase
+              });
+            }
+
+            arrayRaia.push(...filtroRaia)
             break;
           };
           query = await atualizaQuery(query);
         } while (raia.length === 0 );
       }
-
 
       resolve({
         animais: arrayRaia, 

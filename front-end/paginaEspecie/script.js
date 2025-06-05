@@ -1,4 +1,6 @@
 const params = new URLSearchParams(window.location.search);
+console.log("params ==> ", params);
+console.log("", params.get("resultado"));
 const resultado = JSON.parse(params.get("resultado"));
 const{animais, mensagem} = resultado;
 
